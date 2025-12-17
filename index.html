@@ -186,7 +186,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-
   <main id="main-content">
     <section class="hero">
       <div class="hero-body">
@@ -230,7 +229,7 @@
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/LinghuiiShen/DeContext" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -255,8 +254,8 @@
           
           <!-- Teaser Image -->
           <div class="column has-text-centered" style="margin-top: 3rem;">
-            <img src="static/images/coverImage.jpg" alt="Research teaser figure" style="max-width: 130%; height: auto; margin-left: -15%; margin-right: -15%;"/>
-            <p class="image-caption" style="margin-top: 1.7rem; font-size: 1.2rem; color: #444; line-height: 1.8; max-width: 1300px; margin-left: auto; margin-right: auto; text-align: justify;">
+            <img src="static/images/coverImage.jpg" alt="Research teaser figure" style="max-width: 100%; height: auto;"/>
+            <p class="image-caption" style="margin-top: 1.7rem; font-size: 1.1rem; color: #444; line-height: 1.8; max-width: 100%; margin-left: auto; margin-right: auto; text-align: justify;">
               A clean user image (top left) can be altered for 
               <span style="color: #1F77B4; font-weight: 600;">neutral</span>, 
               <span style="color: #D62728; font-weight: 600;">violent</span>, 
@@ -287,8 +286,8 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <h2 class="title is-3 has-text-centered">Abstract</h2>
-        <div class="content has-text-justified" style="max-width: 1500px; margin-left: auto; margin-right: auto;">
-          <p style="font-size: 1.2rem; color: #333; line-height: 1.6;">
+        <div class="content has-text-justified" style="max-width: 100%; margin-left: auto; margin-right: auto;">
+          <p style="font-size: 1.1rem; color: #333; line-height: 1.6;">
             In-context diffusion models allow users to modify images with remarkable ease and realism. However, the same power raises serious privacy concerns: personal images can be easily manipulated for identity impersonation, misinformation, or other malicious uses, all without the owner's consent. While prior work has explored input perturbations to protect against misuse in personalized text-to-image generation, the robustness of modern, large-scale in-context DiT-based models remains largely unexamined. In this paper, we propose DeContext, a new method to safeguard input images from unauthorized in-context editing. Our key insight is that contextual information from the source image propagates to the output primarily through multimodal attention layers. By injecting small, targeted perturbations that weaken these cross-attention pathways, DeContext breaks this flow, effectively decouples the link between input and output. This simple defense is both efficient and robust. We further show that early denoising steps and specific transformer blocks dominate context propagation, which allows us to concentrate perturbations where they matter most. Experiments on Flux Kontext and Step1X-Edit show that DeContext consistently blocks unwanted image edits while preserving visual quality. These results highlight the effectiveness of attention-based perturbations as a powerful defense against image manipulation.
           </p>
         </div>
@@ -305,17 +304,17 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Method</h2>
       <div class="has-text-centered">
-        <img src="static/images/model.png" alt="Method overview" style="max-width: 120%; height: auto; margin-left: -10%; margin-right: -10%;"/>
+        <img src="static/images/model.png" alt="Method overview" style="max-width: 100%; height: auto;"/>
       </div>
-      <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
-        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.2rem; color: #444; line-height: 1.6; text-align: justify;">
+      <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.1rem; color: #444; line-height: 1.6; text-align: justify;">
           Overview of our DeContext pipeline. Given a prompt, timestep, noisy target, and context image, DeContext perturbs the context to suppress its attention in the diffusion model. Iterative gradient updates minimize attention activation, detaching the context from influencing generation.
         </h2>
       </div>
 
       <!-- Additional text section -->
-      <div style="width: 110%; margin-left: auto; margin-right: auto; margin-top: 2rem; margin-left: -5%; margin-right: -5%;">
-        <p style="font-size: 1.2rem; color: #333; line-height: 1.8; text-align: justify;">
+      <div style="width: 100%; margin-left: auto; margin-right: auto; margin-top: 2rem;">
+        <p style="font-size: 1.1rem; color: #333; line-height: 1.8; text-align: justify;">
           Moreover, we employ <strong>Concentrated Context Detachment</strong>: restricting the optimization to early, high-noise timesteps and early-to-middle, context-heavy transformer blocks, effectively disrupting context propagation.
         </p>
       </div>
@@ -330,10 +329,10 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Comparision with Baselines</h2>
       <div class="has-text-centered">
-        <img src="static/images/compare.jpg" alt="Method overview" style="max-width: 120%; height: auto; margin-left: -10%; margin-right: -10%;"/>
+        <img src="static/images/compare.jpg" alt="Method overview" style="max-width: 100%; height: auto;"/>
       </div>
-      <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
-        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.2rem; color: #444; line-height: 1.6; text-align: justify;">
+      <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.1rem; color: #444; line-height: 1.6; text-align: justify;">
           Unlike prior attacks on UNet–based T2I and I2I models that introduce visual artifacts, DeContext targets state-of-the-art diffusion transformers and effectively removes context identity while preserving high visual quality.
         </h2>
       </div>
@@ -347,10 +346,10 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">More Qualitative Results</h2>
       <div class="has-text-centered">
-        <img src="static/images/people.png" alt="Method overview" style="max-width: 120%; height: auto; margin-left: -10%; margin-right: -10%;"/>
+        <img src="static/images/people.png" alt="Method overview" style="max-width: 100%; height: auto;"/>
       </div>
-      <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
-        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.2rem; color: #444; line-height: 1.6; text-align: center;">
+      <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.1rem; color: #444; line-height: 1.6; text-align: center;">
           Defense on human portraits.
         </h2>
       </div>
@@ -364,10 +363,10 @@
     <div class="container is-max-desktop">
       
       <div class="has-text-centered">
-        <img src="static/images/item.png" alt="Method overview" style="max-width: 120%; height: auto; margin-left: -10%; margin-right: -10%;"/>
+        <img src="static/images/item.png" alt="Method overview" style="max-width: 100%; height: auto;"/>
       </div>
-      <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
-        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.2rem; color: #444; line-height: 1.6; text-align: center;">
+      <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.1rem; color: #444; line-height: 1.6; text-align: center;">
           Defense on item images.
         </h2>
       </div>
@@ -380,10 +379,10 @@
     <div class="container is-max-desktop">
       
       <div class="has-text-centered">
-        <img src="static/images/Step1x.png" alt="Method overview" style="max-width: 80%; height: auto; margin-left: +10%; margin-right: +10%;"/>
+        <img src="static/images/Step1x.png" alt="Method overview" style="max-width: 70%; height: auto;"/>
       </div>
-      <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
-        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.2rem; color: #444; line-height: 1.6; text-align: center;">
+      <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+        <h2 class="subtitle" style="margin-top: 1.5rem; font-size: 1.1rem; color: #444; line-height: 1.6; text-align: center;">
           Extension Results on Step1X-Edit.
         </h2>
       </div>
@@ -407,7 +406,7 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2025,
+      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
   title={Your Paper Title Here},
   author={Linghui Shen and Mingyue Cui and Xingyi Yang},
   journal={Conference/Journal Name},
@@ -426,7 +425,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
